@@ -1,0 +1,1 @@
+"""EmailGuard persistence layer (SQLite)."""

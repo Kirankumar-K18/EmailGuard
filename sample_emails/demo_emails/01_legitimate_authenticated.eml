@@ -1,0 +1,35 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=northwind-demo.example; i=@northwind-demo.example; q=dns/txt;
+ s=sel2026; t=1794471588; h=from : to : subject : date : message-id;
+ bh=4KgIJlL26oebZCV2K7itOJRHNDyIo1SlHmDiavEcgU8=;
+ b=OxvsMWxJvRt71kXas+ORw6nc5AAK9SA1sVu+ZGSfKAXjSJlvO4qtbBaGaSJNMQEeax2/c
+ vHPR1thhkc3yxprflj7VlP541JJ3vHWomPAT/Rczos17XLEcqLxFJlwWMs17KqONQtYYE1W
+ +iYg61ZI+YMMznRBtK52E2TvHZAnnMRMYXm8+nC2JjVAmqu3KlbuW+rKDgGZ3eO1tBp/S67
+ 3rvNi7aKjzGUghFFLf17YBeHG2109H+MZkhJdn0FV0CEhj4VzTM/GUmTftaqvDXaYbCk3N5
+ xNyrwgTYMgUnmlEsV74KK64qsdrDDJku+wQ0cO3ePRmA2Jen7vPld8Kjn3gg==
+Return-Path: <priya.sharma@northwind-demo.example>
+Received: from mail.northwind-demo.example (mail.northwind-demo.example
+ [203.0.113.25]) by mx.campus-demo.example with ESMTPS id A1B2C3 for
+ <student@campus-demo.example>; Thu, 12 Nov 2026 09:14:30 +0530
+Authentication-Results: mx.campus-demo.example; spf=pass
+ smtp.mailfrom=northwind-demo.example; dkim=pass
+ header.d=northwind-demo.example; dmarc=pass
+ header.from=northwind-demo.example
+From: Priya Sharma <priya.sharma@northwind-demo.example>
+To: student@campus-demo.example
+Subject: Project review meeting - Friday 10:00
+Date: Thu, 12 Nov 2026 09:14:22 +0530
+Message-ID: <20261112091422.7F3A@northwind-demo.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hello,
+
+The project review meeting is scheduled for Friday at 10:00 in Room 204.
+The agenda and slides are available on the team portal:
+https://northwind-demo.example/portal/review
+
+Regards,
+Priya Sharma
+Northwind Demo Ltd

@@ -1,0 +1,31 @@
+Return-Path: <bounce-7391@lists-demo.example>
+Received: from relay.lists-demo.example (relay.lists-demo.example [192.0.2.60]) by mx.campus-demo.example with ESMTPS id G7H8I9 for <student@campus-demo.example>; Wed, 11 Nov 2026 16:41:12 +0530
+Authentication-Results: mx.campus-demo.example; spf=pass smtp.mailfrom=lists-demo.example; dkim=fail (body hash did not verify) header.d=cloudmart-demo.example; dmarc=fail header.from=cloudmart-demo.example
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cloudmart-demo.example; i=@cloudmart-demo.example; q=dns/txt;
+ s=mail1; t=1794471588; h=from : to : subject : date : message-id;
+ bh=QK+MOy+lj6x1UolaPMGDVS/81MfU4eWOLPwuRe8kxRA=;
+ b=AXlv5eyl6F8G4qJX+IzPUVw2SxR+3nrouAqAzOS436BTRQSnwu4BQj0OD6WSf/0p2Zd+a
+ ohArKwAq9SWaXnMNNCwzGyyyiG48y2/QmSyIrCg+3qGwMa7dwKftSmQxN2rDf/wViJRcbDV
+ hzBKHaNANmqKZ7jbxBXDXtU36tIHkxoifufwuIAO1GF9d0nvJEEummpiip5G5t2I1aTK993
+ 9LT38IRo6ypl8dSedAiFDHRJEV8+LQawWef0l7zMNxXsahIW8fxoOVdF6eFwA2aesf1gpy5
+ 6Eqvx4a6o8p0vyagbj3u339PvEIwVPZEzeNGxmDCEAKvYi1wuVILFwySudBg==
+From: CloudMart Orders <orders@cloudmart-demo.example>
+To: student@campus-demo.example
+Subject: Your order #48213 has shipped
+Date: Wed, 11 Nov 2026 16:40:05 +0530
+Message-ID: <ord-48213@cloudmart-demo.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hi,
+
+Your order #48213 has shipped.
+Estimated delivery: 14 Nov 2026.
+Please update your payment details at https://cloudmart-demo.example/billing
+
+Thank you for shopping with CloudMart.
+
+--
+You are receiving this via lists-demo.example

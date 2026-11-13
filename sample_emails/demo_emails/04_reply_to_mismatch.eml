@@ -1,0 +1,34 @@
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=acmetech-demo.example; i=@acmetech-demo.example; q=dns/txt;
+ s=dkim2026; t=1794471588; h=from : to : subject : date : message-id;
+ bh=+73eI8W/QA8AUDRiesMcNqwPkY0QXJbnIQKcdzbbG3c=;
+ b=hr+CpbHcpWFmwKqmegUOJRRYujTkjZdJ8nYK3gePzC6I4wUOcA0FSI0emTqoQe0sWC10X
+ 9WzCrafJIFgoB9CB+2YLSwhQ3WUBwY4yBWA1RP60dZvOwpr5Mz/zz793cuDqOfGUWHKHQca
+ 76+kP/0D5VjAkVdC0J48sJ7KVZHibmRxQQEqgRPuNDdb1TC0ito0JyOT172CO0hiuOxDtfy
+ pwjJ1EKN0bZ2pdKbboit1NP/T7kUSbGHcjfMTIlGDxHqq2Mu9FuJNDF6lhwavjJksxjG6XH
+ Y32/xUTHwztHpXT8AOBvc1Ccthq+nTV1LbBtrOvqT8J31+5ibzH0MRz+6YjA==
+Return-Path: <rahul.mehta@acmetech-demo.example>
+Received: from mail.acmetech-demo.example (mail.acmetech-demo.example
+ [203.0.113.80]) by mx.campus-demo.example with ESMTPS id J1K2L3 for
+ <student@campus-demo.example>; Tue, 10 Nov 2026 14:22:10 +0530
+Authentication-Results: mx.campus-demo.example; spf=pass
+ smtp.mailfrom=acmetech-demo.example; dkim=pass
+ header.d=acmetech-demo.example; dmarc=pass header.from=acmetech-demo.example
+From: Rahul Mehta (CFO) <rahul.mehta@acmetech-demo.example>
+To: student@campus-demo.example
+Reply-To: Rahul Mehta <rahul.mehta.cfo@gmail.com>
+Subject: Urgent: change of vendor bank details
+Date: Tue, 10 Nov 2026 14:22:01 +0530
+Message-ID: <20261110142201.55A1@acmetech-demo.example>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Hi,
+
+Please update the bank details for Zenith Supplies before today's payment run.
+The new account information will follow from my personal address - reply there only,
+as I am travelling and cannot take calls.
+This is urgent, please process it immediately.
+
+Rahul

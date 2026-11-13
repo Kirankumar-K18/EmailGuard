@@ -1,0 +1,82 @@
+Return-Path: <bounce@mailer-xj3.example>
+Received: from localhost (localhost [192.0.2.201]) by relay8.example with
+ ESMTPS id R8 for <student@campus-demo.example>; Mon, 09 Nov 2026 02:55:00
+ +0000
+Received: from relay7.example (relay7.example [192.0.2.207]) by relay8.example
+ with ESMTPS id R7 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 02:50:00 +0000
+Received: from relay6.example (relay6.example [192.0.2.206]) by relay7.example
+ with ESMTPS id R6 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 03:00:00 +0000
+Received: from relay5.example (relay5.example [192.0.2.205]) by relay6.example
+ with ESMTPS id R5 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 02:49:00 +0000
+Received: from relay4.example (relay4.example [192.0.2.204]) by relay5.example
+ with ESMTPS id R4 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 02:48:00 +0000
+Received: from relay3.example (relay3.example [198.51.100.200]) by
+ relay4.example with ESMTPS id R3 for <student@campus-demo.example>; Mon, 09
+ Nov 2026 02:47:00 +0000
+Received: from relay2.example (relay2.example [192.0.2.202]) by relay3.example
+ with ESMTPS id R2 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 02:46:00 +0000
+Received: from relay1.example (relay1.example [192.0.2.201]) by relay2.example
+ with ESMTPS id R1 for <student@campus-demo.example>; Mon, 09 Nov 2026
+ 02:45:00 +0000
+Authentication-Results: mx.campus-demo.example; spf=pass
+ smtp.mailfrom=paypa1-support.example; dkim=pass
+ header.d=paypa1-support.example; dmarc=pass
+ header.from=paypa1-support.example
+From: PayPal Support <service@paypa1-support.example>
+To: student@campus-demo.example
+Reply-To: security.paypal.help@gmail.com
+Subject:
+ URGENT: Your account has been suspended - verify your account immediately
+Date: Mon, 09 Nov 2026 02:44:10 +0000
+Message-ID: <9f2c1d@mailer-xj3.example>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============7082715493627067791=="
+
+--===============7082715493627067791==
+Content-Type: multipart/alternative;
+ boundary="===============5529693301476998754=="
+
+--===============5529693301476998754==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Dear customer,
+
+Unusual activity was detected and your account has been suspended.
+You must verify your account immediately - act now or it will be closed.
+Log in here: http://paypal.com@secure-verify-login.example/account
+Or use: http://203.0.113.200/paypal/login  or  https://bit.ly/demo-3xQ9
+
+PayPal Security Team
+
+--===============5529693301476998754==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+<html><body><p>Your account has been suspended. <a href="http://203.0.113.200/paypal/login">www.paypal.com/secure-login</a></p><p>Short link: <a href="https://bit.ly/demo-3xQ9">Verify your account now</a></p></body></html>
+
+--===============5529693301476998754==--
+
+--===============7082715493627067791==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="PayPal_Statement.pdf.exe"
+MIME-Version: 1.0
+
+REVNTyBQTEFDRUhPTERFUiAtIGhhcm1sZXNzIHRleHQsIG5vdCBhbiBleGVjdXRhYmxlLgo=
+
+--===============7082715493627067791==
+Content-Type: text/html
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="details.html"
+MIME-Version: 1.0
+
+PGh0bWw+PGJvZHk+ZGVtbyBwbGFjZWhvbGRlcjwvYm9keT48L2h0bWw+Cg==
+
+--===============7082715493627067791==--

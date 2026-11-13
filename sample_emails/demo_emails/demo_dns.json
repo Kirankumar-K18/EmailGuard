@@ -1,0 +1,81 @@
+{
+  "notice": "SIMULATED DNS ZONE used by Demo Mode. Contains public keys only; the matching private keys were discarded at generation time.",
+  "zone": {
+    "northwind-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:203.0.113.0/24 include:_spf.mailhost-demo.example -all"
+      ],
+      "MX": [
+        "mail.northwind-demo.example"
+      ]
+    },
+    "_spf.mailhost-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:198.51.100.0/24 ~all"
+      ]
+    },
+    "sel2026._domainkey.northwind-demo.example": {
+      "TXT": [
+        "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApuk6RXvv0ekPix89JjjsLmuXKQyYHOXhItdVPvniIMrXBxyeM8IFwlAlRW+xknkwXocGfQBLuut7/o/VwV2N2psHgOeD7qlmBdXTYbuzyU9tUlAG4zD9aX2+vUDdD4OyS6i9T2/CpVygq02iTeUP5wjL6JX3jdesZbR857JAHMNAwEMWjr/q1bq7uWRmSGGKPoBO3gl5RxF71PK/nGaIzUmMuHWRLnqFFaAPODg1RKxyCnAgQXmoCaP+IVoKnZZAhKuR0wKSSbFWs4+eetPYfLptbf0aLGj3ODnBFSqofQ25fTiyMKejcs+JtzPed1eKKViMROzxXglaZgTDDzgeMQIDAQAB"
+      ]
+    },
+    "_dmarc.northwind-demo.example": {
+      "TXT": [
+        "v=DMARC1; p=reject; rua=mailto:dmarc-reports@northwind-demo.example; pct=100; adkim=r; aspf=r"
+      ]
+    },
+    "globalbank-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:192.0.2.0/25 mx -all"
+      ],
+      "MX": [
+        "mail.globalbank-demo.example"
+      ]
+    },
+    "mail.globalbank-demo.example": {
+      "A": [
+        "192.0.2.10"
+      ]
+    },
+    "_dmarc.globalbank-demo.example": {
+      "TXT": [
+        "v=DMARC1; p=quarantine; rua=mailto:dmarc@globalbank-demo.example; pct=100"
+      ]
+    },
+    "cloudmart-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:203.0.113.128/25 -all"
+      ]
+    },
+    "mail1._domainkey.cloudmart-demo.example": {
+      "TXT": [
+        "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA04KmrzgjlKfkqBW7fjhouPi+QAn00W09LSuQPjF+zDsX9tg7Fg0te67TRXJ9XzJKT+ckgG4EYg5XadEbokkmGslzqmx/fLZtP77j2oFD/+tHhqUS06Ybe9ZJID3dv4YrK08V5L8pwjXITx1idDA6t9E7JXUkgaQxKxPn5Rc12jVE9hCOCsKfDFipNyMinnCpa/KzJd+pPgJwyaBDvc4/PtYQ/RWVs6AiFkQTihGrmUAziULaUJFSvDwNmRBViySU30r4/lKLC71V1d9GQFykuxXAmWkH/MLUegDgG3lU+vQy2in+R79/SAm3LT+1gWiZ9jSuqlceYmz2/K+NgAyjywIDAQAB"
+      ]
+    },
+    "_dmarc.cloudmart-demo.example": {
+      "TXT": [
+        "v=DMARC1; p=reject; rua=mailto:dmarc@cloudmart-demo.example; pct=100"
+      ]
+    },
+    "lists-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:192.0.2.60 -all"
+      ]
+    },
+    "acmetech-demo.example": {
+      "TXT": [
+        "v=spf1 ip4:203.0.113.64/26 -all"
+      ]
+    },
+    "dkim2026._domainkey.acmetech-demo.example": {
+      "TXT": [
+        "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/o9wNF5XzR8tgsehCawoEPe0VNqvt8oyz9Op8BnyNe0e1dbK6d1ctmOUabmnJOxiDrOujYoKjSEjDNR1QCZIALfcknaBg44lTLXoFt8RwIXUb/UXq5gdRvxA4smFHnOfZP+AceZyBAsehXCWzPxxM7rtosYb5L2uchzmHOLzQ9BVWttB4sXxaKT4TWwaxyy83Pc0m+vZMY68UBub9x6P63eH2bFjbtZG9a2vL2c8WQh5HScBWTPDGxcijxvekgwj5oeDyNoM6r0HQBIr5Lyo187v3/JOc9UAAUPVdCSLV1QCt+lNLM1lc4QIasnBbzlk80+gfr3hm/7fSCM0XyoQwIDAQAB"
+      ]
+    },
+    "_dmarc.acmetech-demo.example": {
+      "TXT": [
+        "v=DMARC1; p=quarantine; rua=mailto:dmarc@acmetech-demo.example; pct=100"
+      ]
+    }
+  }
+}

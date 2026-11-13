@@ -1,0 +1,95 @@
+{
+  "notice": "DEMONSTRATION DATA - fictional messages, reserved .example domains, documentation IP ranges.",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "Legitimate authenticated email",
+      "file": "01_legitimate_authenticated.eml",
+      "sending_ip": "203.0.113.25",
+      "description": "A normal internal-style message. The sending IP is listed in the domain's SPF record, the message carries a valid DKIM signature and the domain publishes a DMARC reject policy.",
+      "expected": {
+        "spf": "PASS",
+        "dkim": "PASS",
+        "dmarc": "PASS",
+        "classification": "AUTHENTICATED"
+      },
+      "learning_points": [
+        "SPF passes because 203.0.113.25 is inside ip4:203.0.113.0/24.",
+        "DKIM is verified cryptographically against the public key in the simulated DNS zone.",
+        "DMARC passes because SPF and DKIM are both aligned with the From domain."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Email with SPF failure",
+      "file": "02_spf_failure.eml",
+      "sending_ip": "198.51.100.77",
+      "description": "The message claims to come from globalbank-demo.example but was delivered from 198.51.100.77, which is not authorised by that domain's SPF record (-all). There is no DKIM signature to fall back on.",
+      "expected": {
+        "spf": "FAIL",
+        "dkim": "NONE",
+        "dmarc": "FAIL",
+        "classification": "FAILED AUTHENTICATION"
+      },
+      "learning_points": [
+        "SPF checks the *connecting IP*, not what the From header says.",
+        "With no DKIM signature, DMARC has no aligned pass to rely on and fails.",
+        "The domain's p=quarantine policy would send this message to spam."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Email with DKIM signature failure",
+      "file": "03_dkim_failure.eml",
+      "sending_ip": "192.0.2.60",
+      "description": "A genuinely DKIM-signed message that was modified after signing (a mailing-list footer and an extra sentence were added). The body hash no longer matches, so the signature fails. SPF passes only for the list's own domain, which is not aligned with the From domain.",
+      "expected": {
+        "spf": "PASS",
+        "dkim": "FAIL",
+        "dmarc": "FAIL",
+        "classification": "FAILED AUTHENTICATION"
+      },
+      "learning_points": [
+        "DKIM protects the message CONTENT: changing even one character of the signed body breaks it.",
+        "SPF passed for lists-demo.example, but DMARC needs the SPF domain to align with the From domain - it does not.",
+        "This is why mailing lists and forwarders often break DKIM and DMARC."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Email with From / Reply-To mismatch",
+      "file": "04_reply_to_mismatch.eml",
+      "sending_ip": "203.0.113.80",
+      "description": "A business-email-compromise pattern: the message passes SPF, DKIM and DMARC (it really was sent through the company's mail system, for example from a compromised account), but replies are redirected to a free-mail address and the text pressures the recipient to change bank details.",
+      "expected": {
+        "spf": "PASS",
+        "dkim": "PASS",
+        "dmarc": "PASS",
+        "classification": "SUSPICIOUS"
+      },
+      "learning_points": [
+        "Authentication proves WHO sent the message, not that it is trustworthy.",
+        "Reply-To pointing to a different domain is a classic BEC warning sign.",
+        "Heuristics add context where cryptographic checks pass."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Suspicious email with multiple indicators",
+      "file": "05_multiple_indicators.eml",
+      "sending_ip": "198.51.100.200",
+      "description": "A textbook phishing message: a look-alike domain (paypa1), a brand display name, a free-mail Reply-To, a mismatched Return-Path, links to a raw IP / URL shortener / '@' trick, a double-extension attachment, out-of-order Received hops - and a FORGED Authentication-Results header claiming everything passed.",
+      "expected": {
+        "spf": "NONE",
+        "dkim": "NONE",
+        "dmarc": "NONE",
+        "classification": "SUSPICIOUS"
+      },
+      "learning_points": [
+        "Never trust an Authentication-Results header inside the message: EmailGuard re-checks and finds the claims are false.",
+        "No single indicator is conclusive, but many together drive the score to HIGH.",
+        "The attacker's own domains publish no SPF/DKIM/DMARC, so authentication cannot help - heuristics must."
+      ]
+    }
+  ]
+}
